@@ -421,6 +421,10 @@ struct TreeNode {
 
   // print the tree using levelOrderTraversal
   void printTree() const {
+    if(!this) {
+      std::cout << "Warning: Empty Tree!\n";
+      return;
+    }
     std::queue<const TreeNode<T>*> q;
     int maxDepth = this->height;
     int maxWidth = (1 << (maxDepth + 1)) - 1;
@@ -462,6 +466,10 @@ struct TreeNode {
   void printDetailedTree() const {
     std::cout << "Attention: Because of alignment issue, this method can only "
                  "print data that takes up one space!!! e.g. 'a' '1' '/' \n";
+    if(!this) {
+      std::cout << "Warning: Empty Tree!\n";
+      return;
+    }
     std::queue<const TreeNode<T>*> q;
     int maxDepth = this->height;
     int maxWidth = (1 << (maxDepth + 1)) - 1;
